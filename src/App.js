@@ -35,8 +35,7 @@ render() {
 return (
    
 
-  
-    <div className="app">
+  <div className="app">
       <Header />
       <SearchPokemon search={this.searchPoke} click={this.handleClick} />
       

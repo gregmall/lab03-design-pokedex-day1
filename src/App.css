@@ -1,4 +1,4 @@
-.app{
+.app {
   text-align: center;
    display: grid;
    grid-template-rows: 100%/ 20% 80%;
@@ -13,7 +13,7 @@
 header {
   height: 150px;
   width: 100%;
-  background-color: brown;
+  background-color: forestgreen;
   display: flex;
   align-items: center;
   justify-content: center;
