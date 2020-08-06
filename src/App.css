@@ -13,8 +13,11 @@
 header {
   height: 150px;
   width: 100%;
-  
+
+  background-color: forestgreen;
+
   background-color: green;
+
   display: flex;
   align-items: center;
   justify-content: center;
