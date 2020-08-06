@@ -13,11 +13,16 @@
 header {
   height: 150px;
   width: 100%;
+
   background-color: forestgreen;
+=======
+  background-color: green;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px;
+  font-family: cursive;
 }
 
 @keyframes App-logo-spin {
@@ -46,7 +51,7 @@ img {
 }
 button{
   font-size: 20px;
-  background-color: violet;
+  background-color: white;
   font-family: cursive;
   border: 2px solid black;
   border-radius: 6px;

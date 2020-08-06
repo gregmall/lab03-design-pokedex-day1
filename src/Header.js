@@ -4,7 +4,7 @@ export default class Header extends Component {
     render() {
         return (
            <header>
-               POKEMON, YO!
+               POKEMON, YO! CATCH ONE NOW!
             </header>
                 
            
