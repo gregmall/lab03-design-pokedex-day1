@@ -2,7 +2,7 @@ import React from 'react';
 
 
 import request from 'superagent';
-import DisplayPoke from './display/DisplayPoke.js';
+import DisplayPoke from '../display/DisplayPoke.js';
 ;
 
 
@@ -13,7 +13,7 @@ class SearchPoke extends React.Component {
     isLoading: false,
     pokeState: []
   }
-
+  
   handleClick = async () => {
    
     this.setState({ isLoading: true })
@@ -28,15 +28,16 @@ class SearchPoke extends React.Component {
 
   render() {
     const { isLoading, pokeState } = this.state;
-    
+    console.log(pokeState)
     return (
       <div>
           <input onChange={(e) => this.setState({ search: e.target.value})} />
           <select onChange={(e) => { this.setState({ searchBy: e.target.value })} }>
-            <option value='pokemon'>name</option>
-            <option value='type'>type</option>
-            <option value='attack'>attack</option>
-            <option value='defense'>defense</option>
+            
+            <option value='type'>TYPE</option>
+            <option value='pokemon'>NAME</option>
+            <option value='defense'>DEFENSE</option>
+            <option value='attack'>ATTACK</option>
           </select>
           <button onClick={this.handleClick}>Fetch Pokemon!</button>
           {
