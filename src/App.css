@@ -39,3 +39,6 @@ main {
 .search {
   display: block;
 }
+img {
+  width: 150px;
+}

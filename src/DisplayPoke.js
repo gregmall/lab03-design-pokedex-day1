@@ -6,7 +6,7 @@ export default class DisplayPoke extends Component {
             <div className="display">
                 
                 {
-                    this.props.isLoading ? <p>LOADING</p> : this.props.poke.map(poke => <p>NAME: {poke.pokemon} DEFENSE: { poke.defense} ATTACK: { poke.attack }</p>)
+                    this.props.isLoading ? <p>LOADING</p> : this.props.poke.map(poke => <p>NAME: {poke.pokemon} DEFENSE: { poke.defense} ATTACK: { poke.attack } <img src={poke.url_image} alt={poke.pokemon} /></p>)
               
                 }
             </div>
