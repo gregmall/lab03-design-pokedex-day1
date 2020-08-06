@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import SearchPokemon from './SearchPokemon.js';
-import styles from './App.css';
+
 import request from 'superagent';
 import Header from './Header'
 import DisplayPoke from './DisplayPoke'
@@ -37,15 +37,12 @@ render() {
    
 
   
-    <main>
+    <div className="app">
       <Header />
       <SearchPokemon search={this.searchPoke} click={this.handleClick} />
       
       <DisplayPoke poke={this.state.pokeState} isLoading={this.state.isLoading} />
-  
-      
-      
-     </main>
+    </div>
      
   );
 }
