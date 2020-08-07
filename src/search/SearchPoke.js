@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import DisplayPoke from '../display/DisplayPoke.js';
+import DisplayPoke from './DisplayPoke.js';
 
 
 
@@ -16,7 +16,7 @@ class SearchPoke extends React.Component {
    
     this.setState({ isLoading: true })
     const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?perPage=1000&${this.state.searchBy}=${this.state.search}`);
-    console.log(this.state)
+    
     this.setState({ 
       pokeState: data.body.results,
       
@@ -43,7 +43,7 @@ class SearchPoke extends React.Component {
           {
             isLoading
               ? <p>Loading</p> 
-              : pokeState.map(poke => <DisplayPoke pokemon={poke} />)
+              : <DisplayPoke pokeState={this.state.pokeState} />
           }
         </div>
     );

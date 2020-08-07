@@ -35,6 +35,7 @@ return (
               </ul>
           </header>
           <Switch>
+            <div className="box">
               <Route 
                   path="/" 
                   exact
@@ -45,6 +46,7 @@ return (
                   exact
                   render={(routerProps) => <Detail {...routerProps} />} 
                    />
+              </div>
           </Switch>
       </Router>
 
