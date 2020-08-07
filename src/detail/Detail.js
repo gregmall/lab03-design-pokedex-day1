@@ -8,7 +8,7 @@ export default class Detail extends Component {
     componentDidMount= async () =>{
         const name = this.props.match.params.myPokemonId;
         console.log(name)
-        const data = await request.get(`http://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${name}`);
+        const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=${name}`);
 
         const pokemon = data.body.results[0];
         console.log(pokemon.pokemon)
