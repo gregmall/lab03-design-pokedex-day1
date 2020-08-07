@@ -29,10 +29,12 @@ header {
     transform: rotate(360deg);
   }
 }
-
+li {
+  list-style: none;
+}
 
 .search {
- 
+  
   display: block;
   padding: 20px;
   background-color: yellow;
@@ -66,4 +68,15 @@ body {
   /* color: #01FE05;
   text-align: center;
   animation: tooltip 1s ease-in-out infinite alternate; */
+}
+select {
+  font-size: 20px;
+  font-family: fantasy;
+  background-color: yellow;
+  border-radius: 6px;
+}
+input{
+  border: solid black 2px;
+  font-size: 20px;
+  border-radius: 6px;
 }
