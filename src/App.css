@@ -1,9 +1,9 @@
-.box{
+ /* .box{
   text-align: stretch;
    display: grid;
    grid-template-columns: 100px 1fr;
 
-}
+}  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -33,12 +33,25 @@ header {
 li {
   list-style: none;
 }
-
+.list {
+  display: 'flex';
+  flex-wrap: 'wrap';
+}
 .search {
-  
-  
+  display: flex;
+  width: 200px;
+  border: 2px solid greenyellow;
   padding: 20px;
   background-color: #66d5fa;
+}
+.sidebar{
+  background-color: #66d5fa;
+}
+.display{
+  padding:20px;
+  background-color: #66d5fa ;
+  display: flex;
+  flex-wrap: wrap;
 }
 img:hover{
   transform: scale(1.9);
@@ -74,7 +87,7 @@ select {
 }
 input{
   border: solid black 2px;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 6px;
 }
 @keyframes tooltip {

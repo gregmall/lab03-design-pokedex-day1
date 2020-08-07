@@ -9,9 +9,37 @@ class SearchPoke extends React.Component {
     search: '',
     searchBy: 'pokemon',
     isLoading: false,
-    pokeState: []
+    pokeState: [],
+    currentPage: 1,
+    totalPages: 1
   }
   
+componentDidMount = async () => {
+const params = params.get('searchBy');
+const page = params.get('page');
+const search = params.get('search');
+
+if (searchBy && page && search) {
+  await this.setState({
+    searchBy: searchBy,
+    currentPage: page,
+    search: search
+  });
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
   handleClick = async () => {
    
     this.setState({ isLoading: true })
@@ -26,11 +54,11 @@ class SearchPoke extends React.Component {
 
 
   render() {
-    const { isLoading, pokeState } = this.state;
-    console.log(pokeState)
+    const { isLoading } = this.state;
+ 
     return (
       <div className="search">
-          
+          <div className="sidebar">
           <select onChange={(e) => { this.setState({ searchBy: e.target.value })} }>
           
             <option value='pokemon'>NAME</option>
@@ -40,12 +68,18 @@ class SearchPoke extends React.Component {
           </select>
           <input onChange={(e) => this.setState({ search: e.target.value})} />
           <button onClick={this.handleClick}>Fetch Pokemon!</button>
+          </div>
+          <div className="display">
           {
+
             isLoading
               ? <p>Loading</p> 
               : <DisplayPoke pokeState={this.state.pokeState} />
+            
           }
-        </div>
+          </div>
+          </div>
+        
     );
   }
 }

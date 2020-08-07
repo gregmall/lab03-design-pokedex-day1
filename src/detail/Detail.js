@@ -20,7 +20,7 @@ export default class Detail extends Component {
         const {pokemon} = this.state;
 
         return (
-            <div>
+            <div className="detail">
                 {
                     pokemon 
                     ? <div className="tooltip">

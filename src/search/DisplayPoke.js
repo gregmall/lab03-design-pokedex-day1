@@ -13,7 +13,7 @@ export default class DisplayPoke extends Component {
         return (
 
  
-        <div >
+        <div className="list">
            {this.props.pokeState.map(poke => <PokeItem pokemon={poke} />)}
         </div>
         )
