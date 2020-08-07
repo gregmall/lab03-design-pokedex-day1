@@ -25,12 +25,14 @@ return (
 
       <Router>
           <header>
-              <li>
-                  <Link to="/detail">Detail</Link>
+            <ul>
+              <li className="title">
+                POKEMON!
               </li>
               <li>
                   <Link to="/">Home</Link>
               </li>
+              </ul>
           </header>
           <Switch>
               <Route 

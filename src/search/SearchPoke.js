@@ -29,15 +29,16 @@ class SearchPoke extends React.Component {
     const { isLoading, pokeState } = this.state;
     console.log(pokeState)
     return (
-      <div>
-          <input onChange={(e) => this.setState({ search: e.target.value})} />
+      <div className="search">
+          
           <select onChange={(e) => { this.setState({ searchBy: e.target.value })} }>
-            
-            <option value='type'>TYPE</option>
+          
             <option value='pokemon'>NAME</option>
+            <option value='type'>TYPE</option>
             <option value='defense'>DEFENSE</option>
             <option value='attack'>ATTACK</option>
           </select>
+          <input onChange={(e) => this.setState({ search: e.target.value})} />
           <button onClick={this.handleClick}>Fetch Pokemon!</button>
           {
             isLoading
