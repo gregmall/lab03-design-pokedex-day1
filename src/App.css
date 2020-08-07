@@ -13,7 +13,7 @@
 header {
   height: 150px;
   width: 100%;
-  background-color: #47174a;
+  background-color: #0af7ff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +38,7 @@ li {
   
   
   padding: 20px;
-  background-color: #5b3970;
+  background-color: #66d5fa;
 }
 img:hover{
   transform: scale(1.9);
@@ -56,7 +56,7 @@ button{
   border-radius: 6px;
 }
 body {
-  background-color: #5b3970;
+  background-color: #66d5fa;
   
 }
 .tooltip {
@@ -91,3 +91,30 @@ input{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   animation: tooltip 1s ease-in-out infinite alternate;
 }
+
+.tooltiptext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  visibility: hidden;
+  width: 200px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  animation: tooltiptext 3s ease-in-out infinite alternate;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+@keyframes tooltiptext {
+  from {
+    text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  }
+  to {
+    text-shadow: 0 0 00px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  }
+}  

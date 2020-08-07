@@ -8,7 +8,7 @@ class SearchPoke extends React.Component {
   state = { 
     search: '',
     searchBy: 'pokemon',
-    isLoading: true,
+    isLoading: false,
     pokeState: []
   }
   
@@ -42,7 +42,7 @@ class SearchPoke extends React.Component {
           <button onClick={this.handleClick}>Fetch Pokemon!</button>
           {
             isLoading
-              ? <p></p> 
+              ? <p>Loading</p> 
               : pokeState.map(poke => <DisplayPoke pokemon={poke} />)
           }
         </div>
