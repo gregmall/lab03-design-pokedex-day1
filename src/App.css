@@ -13,15 +13,22 @@
 header {
   height: 150px;
   width: 100%;
+  
   background-color: #0af7ff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 40px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
-
-
+nav {
+  padding: 30px;
+  disply: flex;
+  justify-content: flex-start;
+}
+h1 {
+  padding: 30px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -47,6 +54,7 @@ li {
 }
 .sidebar{
   background-color: #66d5fa;
+  height: 1000px;
 }
 .display{
   margin: 60px;
@@ -86,7 +94,8 @@ body {
 
 }
 .tooltip {
- 
+  border: 2px black solid;
+  margin: 30px;
   font-size: 20px;
   color: #01FE05;
   text-align: center;
@@ -127,6 +136,7 @@ input{
   color: black;
   text-align: center;
   border-radius: 6px;
+  margin: 30px;
   padding: 5px 0;
   position: absolute;
   z-index: 1;
@@ -152,5 +162,9 @@ a:hover{
   color: lightgreen;
 }
 .detail {
-  border: 2px black solid;
+display: flex;
+align-items: center;
+justify-content: center;
+  
+
 }

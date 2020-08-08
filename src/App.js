@@ -8,6 +8,7 @@ import {
 import './App.css';
 import SearchPoke from './search/SearchPoke.js';
 import Detail from './detail/Detail'
+import Header from './Header.js'
 
 
 class App extends React.Component {
@@ -23,7 +24,8 @@ return (
     <div className="app">
 
       <Router>
-          <header>
+        <Header />
+          {/* <header>
             <ul>
               <li className="title">
                 POKEMON!
@@ -32,7 +34,7 @@ return (
                   <Link to="/">Home</Link>
               </li>
               </ul>
-          </header>
+          </header> */}
           <Switch>
             <div className="box">
               <Route 
