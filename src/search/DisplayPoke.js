@@ -11,10 +11,27 @@ export default class DisplayPoke extends Component {
      
         
         return (
+            <div>
+                {
+                  this.props.pokeState.length > 0 && <div>
+                      {
+                            Number(this.props.currentPage) !== 1 && <button onClick={this.props.handlePrevClick}>Previous Page</button>
+                      }
+                      {
+                            Number(this.props.currentPage) !== Number(this.props.totalPages) && <button onClick={this.props.handleNextClick}>Next Page</button>
+                      }
+                      {this.props.currentPage} of {this.props.totalPages}
+
+            </div>
+                      
+                      
+                }
+          
 
  
         <div className="list">
            {this.props.pokeState.map(poke => <PokeItem pokemon={poke} />)}
+        </div>
         </div>
         )
         

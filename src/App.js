@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import SearchPoke from './search/SearchPoke.js';
-// import DisplayPoke from './display/DisplayPoke.js';
 import Detail from './detail/Detail'
 
 

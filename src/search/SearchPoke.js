@@ -15,9 +15,10 @@ class SearchPoke extends React.Component {
   }
   
 componentDidMount = async () => {
-const params = params.get('searchBy');
-const page = params.get('page');
-const search = params.get('search');
+  const params = new URLSearchParams(this.props.location.search);
+  const searchBy = params.get('searchBy');
+  const page = params.get('page');
+  const search = params.get('search');
 
 if (searchBy && page && search) {
   await this.setState({
@@ -27,34 +28,57 @@ if (searchBy && page && search) {
   });
 }
 
+// await this.makeRequest()
+}
+
+makeRequest = async () => {
+  this.setState({ isLoading: true });
+  const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=${this.state.currentPage}&perPage=20&${this.state.searchBy}=${this.state.search}`);
+
+await this.setState({
+  pokeState: data.body.results,
+  totalPages: Math.ceil(data.body.count/20),
+  isLoading: false,
+})
+
+const params = new URLSearchParams(this.props.location.search);
+
+params.set('search', this.state.search);
+params.set('searchBy', this.state.searchBy);
+params.set('page', this.state.currentPage);
+
+this.props.history.push('?' + params.toString())
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-  handleClick = async () => {
-   
-    this.setState({ isLoading: true })
-    const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?perPage=1000&${this.state.searchBy}=${this.state.search}`);
-    
-    this.setState({ 
-      pokeState: data.body.results,
-      
-      isLoading: false,
-     })
+handleClick = async () => {
+   await this.setState({
+      currentPage: 1
+    })
+    await this.makeRequest()
   }
+
+ 
+handleNextClick = async () =>{
+  await this.setState({ currentPage: Number(this.state.currentPage) + 1 })
+
+  await this.makeRequest();
+}
+
+handlePrevClick = async () => {
+  await this.setState({ currentPage: Number(this.state.currentPage) - 1 })
+
+  await this.makeRequest();
+}
 
 
   render() {
-    const { isLoading } = this.state;
+    const { 
+      isLoading,
+      currentPage,
+      totalPages,
+   } = this.state;
  
     return (
       <div className="search">
@@ -74,7 +98,10 @@ if (searchBy && page && search) {
 
             isLoading
               ? <p>Loading</p> 
-              : <DisplayPoke pokeState={this.state.pokeState} />
+              : <DisplayPoke handleNextClick={this.handleNextClick} handlePrevClick={this.handlePrevClick}
+              currentPage={currentPage}
+              totalPages={totalPages}
+              pokeState={this.state.pokeState} />
             
           }
           </div>

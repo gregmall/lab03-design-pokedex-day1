@@ -42,16 +42,19 @@ li {
   width: 200px;
   border: 2px solid greenyellow;
   padding: 20px;
+  
   background-color: #66d5fa;
 }
 .sidebar{
   background-color: #66d5fa;
 }
 .display{
+  margin: 60px;
   padding:20px;
   background-color: #66d5fa ;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 img:hover{
   transform: scale(1.9);
@@ -59,6 +62,7 @@ img:hover{
 img {
   transition: all .2s ease-in-out;
   width: 150px;
+  
 }
 
 button{
@@ -71,6 +75,15 @@ button{
 body {
   background-color: #66d5fa;
   
+}
+.pokeCard {
+  border: 2px solid #01FE05;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: honeydew;
+
 }
 .tooltip {
  
