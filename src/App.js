@@ -3,12 +3,12 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
-    Link,
+    
 } from 'react-router-dom';
 import './App.css';
 import SearchPoke from './search/SearchPoke.js';
-// import DisplayPoke from './display/DisplayPoke.js';
 import Detail from './detail/Detail'
+import Header from './Header.js'
 
 
 class App extends React.Component {
@@ -24,17 +24,10 @@ return (
     <div className="app">
 
       <Router>
-          <header>
-            <ul>
-              <li className="title">
-                POKEMON!
-              </li>
-              <li>
-                  <Link to="/">Home</Link>
-              </li>
-              </ul>
-          </header>
+        <Header />
+     
           <Switch>
+            <div className="box">
               <Route 
                   path="/" 
                   exact
@@ -45,6 +38,7 @@ return (
                   exact
                   render={(routerProps) => <Detail {...routerProps} />} 
                    />
+              </div>
           </Switch>
       </Router>
 

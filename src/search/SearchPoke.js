@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import DisplayPoke from '../display/DisplayPoke.js';
+import DisplayPoke from './DisplayPoke.js';
 
 
 
@@ -9,28 +9,80 @@ class SearchPoke extends React.Component {
     search: '',
     searchBy: 'pokemon',
     isLoading: false,
-    pokeState: []
+    pokeState: [],
+    currentPage: 1,
+    totalPages: 1
   }
   
-  handleClick = async () => {
-   
-    this.setState({ isLoading: true })
-    const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?perPage=1000&${this.state.searchBy}=${this.state.search}`);
-    console.log(this.state)
-    this.setState({ 
-      pokeState: data.body.results,
-      
-      isLoading: false,
-     })
+componentDidMount = async () => {
+  const params = new URLSearchParams(this.props.location.search);
+  const searchBy = params.get('searchBy');
+  const page = params.get('page');
+  const search = params.get('search');
+
+if (searchBy && page && search) {
+  await this.setState({
+    searchBy: searchBy,
+    currentPage: page,
+    search: search
+  });
+}
+
+
+}
+
+makeRequest = async () => {
+  this.setState({ isLoading: true });
+  const data = await request.get(`https://alchemy-pokedex.herokuapp.com/api/pokedex?page=${this.state.currentPage}&perPage=20&${this.state.searchBy}=${this.state.search}`);
+
+await this.setState({
+  pokeState: data.body.results,
+  totalPages: Math.ceil(data.body.count/20),
+  isLoading: false,
+})
+
+const params = new URLSearchParams(this.props.location.search);
+
+params.set('search', this.state.search);
+params.set('searchBy', this.state.searchBy);
+params.set('page', this.state.currentPage);
+
+this.props.history.push('?' + params.toString())
+
+}
+
+
+handleClick = async () => {
+   await this.setState({
+      currentPage: 1
+    })
+    await this.makeRequest()
   }
+
+ 
+handleNextClick = async () =>{
+  await this.setState({ currentPage: Number(this.state.currentPage) + 1 })
+
+  await this.makeRequest();
+}
+
+handlePrevClick = async () => {
+  await this.setState({ currentPage: Number(this.state.currentPage) - 1 })
+
+  await this.makeRequest();
+}
 
 
   render() {
-    const { isLoading, pokeState } = this.state;
-    console.log(pokeState)
+    const { 
+      isLoading,
+      currentPage,
+      totalPages,
+   } = this.state;
+ 
     return (
       <div className="search">
-          
+          <div className="sidebar">
           <select onChange={(e) => { this.setState({ searchBy: e.target.value })} }>
           
             <option value='pokemon'>NAME</option>
@@ -40,12 +92,21 @@ class SearchPoke extends React.Component {
           </select>
           <input onChange={(e) => this.setState({ search: e.target.value})} />
           <button onClick={this.handleClick}>Fetch Pokemon!</button>
+          </div>
+          <div className="display">
           {
+
             isLoading
               ? <p>Loading</p> 
-              : pokeState.map(poke => <DisplayPoke pokemon={poke} />)
+              : <DisplayPoke handleNextClick={this.handleNextClick} handlePrevClick={this.handlePrevClick}
+              currentPage={currentPage}
+              totalPages={totalPages}
+              pokeState={this.state.pokeState} />
+            
           }
-        </div>
+          </div>
+          </div>
+        
     );
   }
 }
