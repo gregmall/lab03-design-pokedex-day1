@@ -28,7 +28,7 @@ if (searchBy && page && search) {
   });
 }
 
-// await this.makeRequest()
+
 }
 
 makeRequest = async () => {

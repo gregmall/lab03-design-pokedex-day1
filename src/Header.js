@@ -6,11 +6,12 @@ export default class Header extends Component {
         return (
            <header className="header">
                <h1>Pokemon</h1>
-               <div>
-                   <img src="ball.gif"  alt="ball" />
+               <div className="headergif">
+                   <img src="/ball.gif"  alt="ball" />
                </div>
                <nav>
                <Link to="/">Home</Link>
+               
                </nav>
             </header>
                 

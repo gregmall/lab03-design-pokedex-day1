@@ -10,8 +10,8 @@ export default class DisplayPoke extends Component {
 
      
         
-        return (
-            <div>
+        return (<div className="list">
+            <div className="pagenumber">
                 {
                   this.props.pokeState.length > 0 && <div>
                       {
@@ -29,8 +29,9 @@ export default class DisplayPoke extends Component {
           
 
  
-        <div className="list">
+        <div className="pokedisplay" >
            {this.props.pokeState.map(poke => <PokeItem pokemon={poke} />)}
+        </div>
         </div>
         </div>
         )

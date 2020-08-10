@@ -1,9 +1,4 @@
- /* .box{
-  text-align: stretch;
-   display: grid;
-   grid-template-columns: 100px 1fr;
 
-}  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -23,11 +18,12 @@ header {
 }
 nav {
   padding: 30px;
-  disply: flex;
+  display: flex;
   justify-content: flex-start;
 }
 h1 {
   padding: 30px;
+  animation: h1 1s ease-in-out infinite alternate;
 }
 @keyframes App-logo-spin {
   from {
@@ -41,13 +37,16 @@ li {
   list-style: none;
 }
 .list {
+  width: 800px;
   display: flex;
   flex-wrap: wrap;
+  
+  
 }
 .search {
   display: flex;
   width: 200px;
-  border: 2px solid greenyellow;
+  border-right: 2px solid greenyellow;
   padding: 20px;
   
   background-color: #66d5fa;
@@ -61,7 +60,9 @@ li {
   padding:20px;
   background-color: #66d5fa ;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  width: 1000px;
+  
   
 }
 img:hover{
@@ -69,16 +70,18 @@ img:hover{
 }
 img {
   transition: all .2s ease-in-out;
-  width: 150px;
-  
+  width: 200px;
+  filter: drop-shadow(7px 7px 7px black);
+  -webkit-filter: drop-shadow(7px 7px 7px black);
 }
 
 button{
   font-size: 20px;
   background-color: white;
-  font-family: cursive;
+  font-family: impact;
   border: 2px solid black;
   border-radius: 6px;
+  margin: 15px;
 }
 body {
   background-color: #66d5fa;
@@ -97,24 +100,26 @@ body {
   border: 2px black solid;
   margin: 30px;
   font-size: 20px;
-  color: #01FE05;
+  color: black;
   text-align: center;
   animation: tooltip 1s ease-in-out infinite alternate;
 }
 select {
   font-size: 20px;
-  font-family: fantasy;
+  font-family: impact;
   background-color:white;
   border-radius: 6px;
+  margin: 15px;
 }
 input{
   border: solid black 2px;
   font-size: 15px;
   border-radius: 6px;
+  margin: 15px;
 }
-@keyframes tooltip {
+@keyframes h1 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #01FE05, 0 0 40px #01FE05, 0 0 50px #01FE05, 0 0 60px #01FE05, 0 0 70px #01FE05;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a32fa1, 0 0 40px #a32fa1, 0 0 50px #a32fa1, 0 0 60px #a32fa1, 0 0 70px #a32fa1;
   }
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #44bdd3, 0 0 40px #44bdd3, 0 0 50px #44bdd3, 0 0 60px #44bdd3, 0 0 70px #44bdd3, 0 0 80px #44bdd3;
@@ -140,20 +145,23 @@ input{
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  animation: tooltiptext 3s ease-in-out infinite alternate;
+  /* top: -5px;
+  right: 105%; */
+
+  
 }
 
 .tooltip:hover .tooltiptext {
 visibility: visible;
 }
-@keyframes tooltiptext {
+/* @keyframes tooltiptext {
   from {
     text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
   }
   to {
     text-shadow: 0 0 00px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
   }
-}  
+}   */
 a {
   text-decoration: none;
   color: crimson
@@ -168,3 +176,29 @@ justify-content: center;
   
 
 }
+.pokedisplay {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+.pagenumber{
+  font-size: 30px;
+  font-family: impact;
+}
+.headergif {
+  position: relative;
+  animation-name: ball;
+  animation-timing-function: ease-in;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+
+}
+@keyframes ball {
+  0%   {left:0px; top:0px;}
+  25%  {left:400px; top:0px;}
+  50%  {left:0px; top:0px;}
+  75%  {left:-400px; top:0px;}
+  100% {left:0px; top:0px;}
+}
+
