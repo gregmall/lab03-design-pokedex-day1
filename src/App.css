@@ -1,30 +1,37 @@
-.app {
-  text-align: center;
-   display: grid;
-   grid-template-rows: 100%/ 20% 80%;
 
-}
+
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 header {
   height: 150px;
   width: 100%;
 
-  background-color: forestgreen;
+  
+  background-color: #0af7ff;
 
-  background-color: green;
+
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 40px;
-  font-family: cursive;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
-
+nav {
+  padding: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+h1 {
+  padding: 30px;
+  animation: h1 1s ease-in-out infinite alternate;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -34,28 +41,165 @@ header {
   }
 }
 
-.search {
- 
-  display: block;
-  padding: 20px;
-  background-color: yellow;
+.list {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  
 }
-img {
-  width: 150px;
+.search {
+  display: flex;
+  width: 200px;
+  border-right: 2px solid greenyellow;
+  padding: 20px;
+  
+  background-color: #66d5fa;
+}
+.sidebar{
+  background-color: #66d5fa;
+  height: 1000px;
 }
 .display{
-  background-color: tomato;
+  margin: 60px;
+  padding:20px;
+  background-color: #66d5fa ;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  width: 1000px;
+  
+  
 }
+img:hover{
+  transform: scale(1.9);
+}
+img {
+  transition: all .2s ease-in-out;
+  width: 200px;
+  filter: drop-shadow(7px 7px 7px black);
+  -webkit-filter: drop-shadow(7px 7px 7px black);
+}
+
 button{
   font-size: 20px;
   background-color: white;
-  font-family: cursive;
+  font-family: impact;
   border: 2px solid black;
   border-radius: 6px;
+  margin: 15px;
 }
 body {
-  background-color: teal;
+  background-color: #66d5fa;
+  
 }
+.pokeCard {
+  border: 2px solid #01FE05;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: honeydew;
+
+}
+
+select {
+  font-size: 20px;
+  font-family: impact;
+  background-color:white;
+  border-radius: 6px;
+  margin: 15px;
+}
+input{
+  border: solid black 2px;
+  font-size: 15px;
+  border-radius: 6px;
+  margin: 15px;
+}
+@keyframes h1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a32fa1, 0 0 40px #a32fa1, 0 0 50px #a32fa1, 0 0 60px #a32fa1, 0 0 70px #a32fa1;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #44bdd3, 0 0 40px #44bdd3, 0 0 50px #44bdd3, 0 0 60px #44bdd3, 0 0 70px #44bdd3, 0 0 80px #44bdd3;
+  }
+} 
+
+.title {
+  font-size: 75px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: tooltip 1s ease-in-out infinite alternate;
+}
+.tooltip {
+  border: 2px black solid;
+  margin: 30px;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+ 
+}
+
+
+.tooltip .tooltiptext {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  visibility: hidden;
+  width: 200px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  margin: 30px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  /* top: -5px;
+  right: 105%;
+  */
+
+  
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  }
+
+
+a {
+  text-decoration: none;
+  color: crimson
+}
+a:hover{
+  color: lightgreen;
+}
+.detail {
+display: flex;
+align-items: center;
+justify-content: center;
+  
+
+}
+.pokedisplay {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+.pagenumber{
+  font-size: 30px;
+  font-family: impact;
+}
+.headergif {
+  position: relative;
+  animation-name: ball;
+  animation-timing-function: ease-in;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+
+
+}
+@keyframes ball {
+  0%   {left:0px; top:0px;}
+  25%  {left:400px; top:0px;}
+  50%  {left:0px; top:0px;}
+  75%  {left:-400px; top:0px;}
+  100% {left:0px; top:0px;}
+}
+
