@@ -26,6 +26,7 @@ if (searchBy && page && search) {
     currentPage: page,
     search: search
   });
+  await this.makeRequest()
 }
 
 
@@ -97,7 +98,7 @@ handlePrevClick = async () => {
           {
 
             isLoading
-              ? <p>Loading</p> 
+              ? <p className="App-logo">Loading</p> 
               : <DisplayPoke handleNextClick={this.handleNextClick} handlePrevClick={this.handlePrevClick}
               currentPage={currentPage}
               totalPages={totalPages}
