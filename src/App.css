@@ -33,9 +33,7 @@ h1 {
     transform: rotate(360deg);
   }
 }
-li {
-  list-style: none;
-}
+
 .list {
   width: 800px;
   display: flex;
@@ -96,14 +94,7 @@ body {
   background-color: honeydew;
 
 }
-.tooltip {
-  border: 2px black solid;
-  margin: 30px;
-  font-size: 20px;
-  color: black;
-  text-align: center;
-  animation: tooltip 1s ease-in-out infinite alternate;
-}
+
 select {
   font-size: 20px;
   font-family: impact;
@@ -131,8 +122,17 @@ input{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   animation: tooltip 1s ease-in-out infinite alternate;
 }
+.tooltip {
+  border: 2px black solid;
+  margin: 30px;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+ 
+}
 
-.tooltiptext {
+
+.tooltip .tooltiptext {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   visibility: hidden;
@@ -146,22 +146,16 @@ input{
   position: absolute;
   z-index: 1;
   /* top: -5px;
-  right: 105%; */
+  right: 105%;
+  */
 
   
 }
-
 .tooltip:hover .tooltiptext {
-visibility: visible;
-}
-/* @keyframes tooltiptext {
-  from {
-    text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  visibility: visible;
   }
-  to {
-    text-shadow: 0 0 00px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
-  }
-}   */
+
+
 a {
   text-decoration: none;
   color: crimson

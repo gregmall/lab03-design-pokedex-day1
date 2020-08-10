@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
-    Link,
+    
 } from 'react-router-dom';
 import './App.css';
 import SearchPoke from './search/SearchPoke.js';
@@ -25,16 +25,7 @@ return (
 
       <Router>
         <Header />
-          {/* <header>
-            <ul>
-              <li className="title">
-                POKEMON!
-              </li>
-              <li>
-                  <Link to="/">Home</Link>
-              </li>
-              </ul>
-          </header> */}
+     
           <Switch>
             <div className="box">
               <Route 
