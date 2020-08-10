@@ -34,8 +34,9 @@ h1 {
   }
 }
 
+
 .list {
-  width: 800px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   
@@ -43,7 +44,7 @@ h1 {
 }
 .search {
   display: flex;
-  width: 200px;
+  /* width: 200px; */
   border-right: 2px solid greenyellow;
   padding: 20px;
   
@@ -52,6 +53,9 @@ h1 {
 .sidebar{
   background-color: #66d5fa;
   height: 1000px;
+  width: 200px;
+  border-right: 2px solid greenyellow;
+  
 }
 .display{
   margin: 60px;
@@ -59,7 +63,7 @@ h1 {
   background-color: #66d5fa ;
   display: flex;
   flex-direction: row;
-  width: 1000px;
+  width: 100%;
   
   
 }
@@ -170,7 +174,8 @@ justify-content: center;
 .pokedisplay {
   display: flex;
   flex-wrap: wrap;
-  width: 1000px;
+  flex-direction: ;
+  width: 100%;
 }
 .pagenumber{
   font-size: 30px;
